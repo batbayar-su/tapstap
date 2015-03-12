@@ -3,10 +3,14 @@ using System.Collections;
 
 public class Bubbles_Script : MonoBehaviour {
 
-	void OnMouseDown () {
-		Debug.Log ("clicking on bubble");
-		//...then set the current bubble to that position.
-		gameObject.transform.position = new Vector3(-400, -400);
+	private Animator animator;
+
+	void Start() {
+		animator = this.GetComponent<Animator> ();
 	}
 
+	void OnMouseDown () {
+		//set the hitten bubble position to out of screen.
+		animator.SetBool("alive", false);
+	}
 }
