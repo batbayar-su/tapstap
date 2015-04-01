@@ -9,16 +9,6 @@ public class Bubble_Generator : MonoBehaviour {
 	
 	GameObject[] bubbles;				//collection of pooled bubbles
 	int currentBubble = 0;				//index of the current bubble in the collection
-	//Sprite[] bubbleSprites;
-
-	private Ray ray; // The ray
-	private RaycastHit hit; // What we hit
-
-	void Awake()
-	{
-		// load all bubbles in bubblesSprites array
-		//bubbleSprites = Resources.LoadAll<Sprite>("bubbles");
-	}
 
 	// Use this for initialization
 	void Start () {
