@@ -60,9 +60,9 @@ public class GenerateBubbles : MonoBehaviour {
 		//starts our function in charge of spawning the bubbles in the playable area
 		StartCoroutine ("BlueSpawnLoop");
 		StartCoroutine ("GreenSpawnLoop");
-		StartCoroutine ("PinkSpawnLoop");
-		StartCoroutine ("PurpleSpawnLoop");
-		StartCoroutine ("OrangeSpawnLoop");
+		//StartCoroutine ("PinkSpawnLoop");
+		//StartCoroutine ("PurpleSpawnLoop");
+		//StartCoroutine ("OrangeSpawnLoop");
 	}
 
 	void FixedUpdate () {
@@ -90,28 +90,52 @@ public class GenerateBubbles : MonoBehaviour {
 			bubbles.Add(new_bubble);
 
 			//To spawn a bubble, get the current spawner position...
-			Vector3 pos = transform.position;
+      Vector3 pos = transform.position;
+      //Re-calculate position indicator
+      bool overit = true;
+      float debug_closest = 1000;
 
-			//...set a random x, y position...
-			float randomX = Random.Range (0, Screen.width);
-			float randomY = Random.Range (0, Screen.height);
-			if (randomY < Screen.height / 2) {
-				randomY = randomY + 29;
-			}
-			if (randomX < Screen.width / 2) {
-				randomX = randomX + 29;
-			} else {
-				randomX = randomX - 29;
-			}
-			Vector2 spawnPosition = new Vector2 (randomX, randomY);
-			pos = Camera.main.ScreenToWorldPoint (new Vector3 (spawnPosition.x, spawnPosition.y, 10));
-			if (pos.y > 3) {
-				pos.y = pos.y - 2;
-			}
+			while(overit) {
+			  //...set a random x, y position...
+			  float randomX = Random.Range (0, Screen.width);
+			  float randomY = Random.Range (0, Screen.height);
+			  if (randomY < Screen.height / 2) {
+				  randomY = randomY + 29;
+			  }
+			  if (randomX < Screen.width / 2) {
+				  randomX = randomX + 29;
+			  } else {
+				  randomX = randomX - 29;
+			  }
+			  Vector2 spawnPosition = new Vector2 (randomX, randomY);
+			  pos = Camera.main.ScreenToWorldPoint (new Vector3 (spawnPosition.x, spawnPosition.y, 10));
+			  if (pos.y > 3) {
+				  pos.y = pos.y - 2;
+        }
+
+        //getting closest bubble distance
+        float closest = 1000;
+        for (int i = 0; i < bubbles.Count; i++)
+        {
+          if (new_bubble != bubbles[i])
+          {
+            float dist = Vector3.Distance(pos, bubbles[i].transform.position);
+            if (closest > dist)
+            {
+              closest = dist;
+            }
+          }
+        }
+        if (closest > 1.9f)
+        {
+          debug_closest = closest;
+          overit = false;
+        }
+      }
+      Debug.Log(debug_closest);
 
 			// setting position
 			new_bubble.transform.position = pos;
-      new_bubble.GetComponent<PhotonView>().viewID = 1;
 			new_bubble.GetComponent<Bubbles_Script>().score = blueSpawnRate / 10f;
 
 			yield return new WaitForSeconds (blueSpawnRate);
@@ -145,7 +169,6 @@ public class GenerateBubbles : MonoBehaviour {
 
 			// setting position
       new_bubble.transform.position = pos;
-      new_bubble.GetComponent<PhotonView>().viewID = 1;
       new_bubble.GetComponent<Bubbles_Script>().score = greenSpawnRate / 10f;
 
 			yield return new WaitForSeconds (greenSpawnRate);
@@ -179,7 +202,6 @@ public class GenerateBubbles : MonoBehaviour {
 
 			// setting position
       new_bubble.transform.position = pos;
-      new_bubble.GetComponent<PhotonView>().viewID = 1;
       new_bubble.GetComponent<Bubbles_Script>().score = pinkSpawnRate / 10f;
 
 			yield return new WaitForSeconds (pinkSpawnRate);
@@ -213,7 +235,6 @@ public class GenerateBubbles : MonoBehaviour {
 
 			// setting position
       new_bubble.transform.position = pos;
-      new_bubble.GetComponent<PhotonView>().viewID = 1;
       new_bubble.GetComponent<Bubbles_Script>().score = purpleSpawnRate / 10f;
 
 			yield return new WaitForSeconds (purpleSpawnRate);
@@ -247,7 +268,6 @@ public class GenerateBubbles : MonoBehaviour {
 
 			// setting position
       new_bubble.transform.position = pos;
-      new_bubble.GetComponent<PhotonView>().viewID = 1;
       new_bubble.GetComponent<Bubbles_Script>().score = orangeSpawnRate / 10f;
 
 			yield return new WaitForSeconds (orangeSpawnRate);
