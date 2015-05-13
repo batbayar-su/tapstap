@@ -2,24 +2,45 @@
 using System.Collections;
 
 public class Bubbles_Script : MonoBehaviour {
-	
-	public UnityEngine.UI.Scrollbar scorebar;
-	public float score = 0;
+
+	public float score;
 
 	private Animator animator;
+	private UnityEngine.UI.Scrollbar scorebar;
 
 	void Start() {
 		//initialize animator
 		animator = this.GetComponent<Animator> ();
 		//initialize scorebar
-		scorebar = (UnityEngine.UI.Scrollbar) this.transform.parent.GetComponent("Score").GetComponent("ScrollBar");
+		scorebar = FindObjectOfType<UnityEngine.UI.Scrollbar> ();
 	}
 
 	void OnMouseDown () {
-		//set the hitten bubble position to out of screen.
-		animator.SetBool("alive", false);
-		score += 10;
-		//scorebar.size = score / 100f;
-		Debug.Log ("Score = "+score+", Size = "+scorebar.size);
+		if (animator.GetBool ("alive")) {
+			//set the hitten bubble position to out of screen.
+			animator.SetBool ("alive", false);
+			animator.SetBool ("ended", false);
+			scorebar.size += score;
+			Debug.Log (score);
+			if (scorebar.size == 1) {
+				Time.timeScale = 0;
+			}
+		}
+	}
+
+	void OnTouchDown () {
+		if (animator.GetBool ("alive")) {
+			//set the hitten bubble position to out of screen.
+			animator.SetBool ("alive", false);
+			animator.SetBool ("ended", false);
+			scorebar.size += score;
+			if (scorebar.size == 1) {
+				Time.timeScale = 0;
+			}
+		}
+	}
+
+	void SetScore(float score) {
+		this.score = score;
 	}
 }
