@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ExitGames.Client.Photon;
+using UnityEngine;
 using System.Collections;
 
 public class GenerateBubbles : MonoBehaviour {
@@ -17,7 +18,43 @@ public class GenerateBubbles : MonoBehaviour {
 
 	private System.Collections.Generic.List<GameObject> bubbles = new System.Collections.Generic.List<GameObject>();
 	private float bubbleIdleTime = 1f;
-	
+
+  #region CONNECTION HANDLING
+
+  public void Awake()
+  {
+    if (!PhotonNetwork.connected)
+    {
+      PhotonNetwork.autoJoinLobby = false;
+      PhotonNetwork.ConnectUsingSettings("0.9");
+    }
+  }
+
+  // This is one of the callback/event methods called by PUN (read more in PhotonNetworkingMessage enumeration)
+  public void OnConnectedToMaster()
+  {
+    PhotonNetwork.JoinRandomRoom();
+  }
+
+  // This is one of the callback/event methods called by PUN (read more in PhotonNetworkingMessage enumeration)
+  public void OnPhotonRandomJoinFailed()
+  {
+    PhotonNetwork.CreateRoom(null, new RoomOptions() { maxPlayers = 4 }, null);
+  }
+
+  // This is one of the callback/event methods called by PUN (read more in PhotonNetworkingMessage enumeration)
+  public void OnJoinedRoom()
+  {
+  }
+
+  // This is one of the callback/event methods called by PUN (read more in PhotonNetworkingMessage enumeration)
+  public void OnCreatedRoom()
+  {
+    Application.LoadLevel(Application.loadedLevel);
+  }
+
+  #endregion
+
 	// Use this for initialization
 	void Start () {
 		//starts our function in charge of spawning the bubbles in the playable area
@@ -59,22 +96,22 @@ public class GenerateBubbles : MonoBehaviour {
 			float randomX = Random.Range (0, Screen.width);
 			float randomY = Random.Range (0, Screen.height);
 			if (randomY < Screen.height / 2) {
-					randomY = randomY + 29;
+				randomY = randomY + 29;
 			}
 			if (randomX < Screen.width / 2) {
-					randomX = randomX + 29;
+				randomX = randomX + 29;
 			} else {
-					randomX = randomX - 29;
+				randomX = randomX - 29;
 			}
 			Vector2 spawnPosition = new Vector2 (randomX, randomY);
 			pos = Camera.main.ScreenToWorldPoint (new Vector3 (spawnPosition.x, spawnPosition.y, 10));
 			if (pos.y > 3) {
-					pos.y = pos.y - 2;
+				pos.y = pos.y - 2;
 			}
 
 			// setting position
 			new_bubble.transform.position = pos;
-
+      new_bubble.GetComponent<PhotonView>().viewID = 1;
 			new_bubble.GetComponent<Bubbles_Script>().score = blueSpawnRate / 10f;
 
 			yield return new WaitForSeconds (blueSpawnRate);
@@ -93,23 +130,23 @@ public class GenerateBubbles : MonoBehaviour {
 			float randomX = Random.Range (0, Screen.width);
 			float randomY = Random.Range (0, Screen.height);
 			if (randomY < Screen.height / 2) {
-					randomY = randomY + 29;
+				randomY = randomY + 29;
 			}
 			if (randomX < Screen.width / 2) {
-					randomX = randomX + 29;
+				randomX = randomX + 29;
 			} else {
-					randomX = randomX - 29;
+				randomX = randomX - 29;
 			}
 			Vector2 spawnPosition = new Vector2 (randomX, randomY);
 			pos = Camera.main.ScreenToWorldPoint (new Vector3 (spawnPosition.x, spawnPosition.y, 10));
 			if (pos.y > 3) {
-					pos.y = pos.y - 2;
+				pos.y = pos.y - 2;
 			}
 
 			// setting position
-            new_bubble.transform.position = pos;
-
-            new_bubble.GetComponent<Bubbles_Script>().score = greenSpawnRate / 10f;
+      new_bubble.transform.position = pos;
+      new_bubble.GetComponent<PhotonView>().viewID = 1;
+      new_bubble.GetComponent<Bubbles_Script>().score = greenSpawnRate / 10f;
 
 			yield return new WaitForSeconds (greenSpawnRate);
 		}
@@ -141,9 +178,9 @@ public class GenerateBubbles : MonoBehaviour {
 			}
 
 			// setting position
-            new_bubble.transform.position = pos;
-
-            new_bubble.GetComponent<Bubbles_Script>().score = pinkSpawnRate / 10f;
+      new_bubble.transform.position = pos;
+      new_bubble.GetComponent<PhotonView>().viewID = 1;
+      new_bubble.GetComponent<Bubbles_Script>().score = pinkSpawnRate / 10f;
 
 			yield return new WaitForSeconds (pinkSpawnRate);
 		}
@@ -161,23 +198,23 @@ public class GenerateBubbles : MonoBehaviour {
 			float randomX = Random.Range (0, Screen.width);
 			float randomY = Random.Range (0, Screen.height);
 			if (randomY < Screen.height / 2) {
-					randomY = randomY + 29;
+				randomY = randomY + 29;
 			}
 			if (randomX < Screen.width / 2) {
-					randomX = randomX + 29;
+				randomX = randomX + 29;
 			} else {
-					randomX = randomX - 29;
+				randomX = randomX - 29;
 			}
 			Vector2 spawnPosition = new Vector2 (randomX, randomY);
 			pos = Camera.main.ScreenToWorldPoint (new Vector3 (spawnPosition.x, spawnPosition.y, 10));
 			if (pos.y > 3) {
-					pos.y = pos.y - 2;
+				pos.y = pos.y - 2;
 			}
 
 			// setting position
-            new_bubble.transform.position = pos;
-
-            new_bubble.GetComponent<Bubbles_Script>().score = purpleSpawnRate / 10f;
+      new_bubble.transform.position = pos;
+      new_bubble.GetComponent<PhotonView>().viewID = 1;
+      new_bubble.GetComponent<Bubbles_Script>().score = purpleSpawnRate / 10f;
 
 			yield return new WaitForSeconds (purpleSpawnRate);
 		}
@@ -195,23 +232,23 @@ public class GenerateBubbles : MonoBehaviour {
 			float randomX = Random.Range (0, Screen.width);
 			float randomY = Random.Range (0, Screen.height);
 			if (randomY < Screen.height / 2) {
-					randomY = randomY + 29;
+				randomY = randomY + 29;
 			}
 			if (randomX < Screen.width / 2) {
-					randomX = randomX + 29;
+				randomX = randomX + 29;
 			} else {
-					randomX = randomX - 29;
+				randomX = randomX - 29;
 			}
 			Vector2 spawnPosition = new Vector2 (randomX, randomY);
 			pos = Camera.main.ScreenToWorldPoint (new Vector3 (spawnPosition.x, spawnPosition.y, 10));
 			if (pos.y > 3) {
-					pos.y = pos.y - 2;
+				pos.y = pos.y - 2;
 			}
 
 			// setting position
-            new_bubble.transform.position = pos;
-
-            new_bubble.GetComponent<Bubbles_Script>().score = orangeSpawnRate / 10f;
+      new_bubble.transform.position = pos;
+      new_bubble.GetComponent<PhotonView>().viewID = 1;
+      new_bubble.GetComponent<Bubbles_Script>().score = orangeSpawnRate / 10f;
 
 			yield return new WaitForSeconds (orangeSpawnRate);
 		}

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ExitGames.Client.Photon;
+using UnityEngine;
 using System.Collections;
 
 public class Bubble_Generator : MonoBehaviour {
@@ -9,6 +10,42 @@ public class Bubble_Generator : MonoBehaviour {
 	
 	GameObject[] bubbles;				//collection of pooled bubbles
 	int currentBubble = 0;				//index of the current bubble in the collection
+
+    #region CONNECTION HANDLING
+
+    public void Awake()
+    {
+        if (!PhotonNetwork.connected)
+        {
+            PhotonNetwork.autoJoinLobby = false;
+            PhotonNetwork.ConnectUsingSettings("0.9");
+        }
+    }
+
+    // This is one of the callback/event methods called by PUN (read more in PhotonNetworkingMessage enumeration)
+    public void OnConnectedToMaster()
+    {
+        PhotonNetwork.JoinRandomRoom();
+    }
+
+    // This is one of the callback/event methods called by PUN (read more in PhotonNetworkingMessage enumeration)
+    public void OnPhotonRandomJoinFailed()
+    {
+        PhotonNetwork.CreateRoom(null, new RoomOptions() { maxPlayers = 4 }, null);
+    }
+
+    // This is one of the callback/event methods called by PUN (read more in PhotonNetworkingMessage enumeration)
+    public void OnJoinedRoom()
+    {
+    }
+
+    // This is one of the callback/event methods called by PUN (read more in PhotonNetworkingMessage enumeration)
+    public void OnCreatedRoom()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
+    #endregion
 
 	// Use this for initialization
 	void Start () {
