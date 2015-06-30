@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GenerateBubbles : MonoBehaviour
 {
-
+  
   public GameObject blueBubblePrefab;
   public GameObject cyanBubblePrefab;
   public GameObject greenBubblePrefab;
@@ -11,7 +11,7 @@ public class GenerateBubbles : MonoBehaviour
   public GameObject orangeBubblePrefab;
   public GameObject pinkBubblePrefab;
   public GameObject purpleBubblePrefab;
-
+  
   public float blueSpawnRate = .5f;
   public float cyanSpawnRate = 1f;
   public float greenSpawnRate = 1.5f;
@@ -19,10 +19,10 @@ public class GenerateBubbles : MonoBehaviour
   public float orangeSpawnRate = 2.5f;
   public float pinkSpawnRate = 3f;
   public float purpleSpawnRate = 3.5f;
-
+  
   private System.Collections.Generic.List<GameObject> bubbles = new System.Collections.Generic.List<GameObject>();
   private float _too_close = 1.5f;
-
+  
   // Use this for initialization
   void Awake()
   {
@@ -35,7 +35,7 @@ public class GenerateBubbles : MonoBehaviour
     StartCoroutine("PinkSpawnLoop");
     StartCoroutine("PurpleSpawnLoop");
   }
-
+  
   void FixedUpdate()
   {
     System.Collections.Generic.List<GameObject> must_destroy = new System.Collections.Generic.List<GameObject>();
@@ -54,20 +54,20 @@ public class GenerateBubbles : MonoBehaviour
       Destroy(item);
     }
   }
-
+  
   IEnumerator BlueSpawnLoop()
   {
     yield return new WaitForSeconds(blueSpawnRate);
-    while (true)
+    while (!TapConstants.gameover)
     {
       GameObject new_bubble = (GameObject)Instantiate(blueBubblePrefab);
       bubbles.Add(new_bubble);
-
+      
       //To spawn a bubble, get the current spawner position...
       Vector3 pos = transform.position;
       //Re-calculate position indicator
       bool overit = true;
-
+      
       while (overit)
       {
         //...set a random x, y position...
@@ -91,7 +91,7 @@ public class GenerateBubbles : MonoBehaviour
         {
           pos.y = pos.y - 2;
         }
-
+        
         //getting closest bubble distance
         float closest = 1000;
         for (int i = 0; i < bubbles.Count; i++)
@@ -110,28 +110,28 @@ public class GenerateBubbles : MonoBehaviour
           overit = false;
         }
       }
-
+      
       // setting position
       new_bubble.transform.position = pos;
       new_bubble.GetComponent<Bubbles_Script>().score = blueSpawnRate * 5;
-
+      
       yield return new WaitForSeconds(blueSpawnRate);
     }
   }
-
+  
   IEnumerator CyanSpawnLoop()
   {
     yield return new WaitForSeconds(cyanSpawnRate);
-    while (true)
+    while (!TapConstants.gameover)
     {
       GameObject new_bubble = (GameObject)Instantiate(cyanBubblePrefab);
       bubbles.Add(new_bubble);
-
+      
       //To spawn a bubble, get the current spawner position...
       Vector3 pos = transform.position;
       //Re-calculate position indicator
       bool overit = true;
-
+      
       while (overit)
       {
         //...set a random x, y position...
@@ -155,7 +155,7 @@ public class GenerateBubbles : MonoBehaviour
         {
           pos.y = pos.y - 2;
         }
-
+        
         //getting closest bubble distance
         float closest = 1000;
         for (int i = 0; i < bubbles.Count; i++)
@@ -174,28 +174,28 @@ public class GenerateBubbles : MonoBehaviour
           overit = false;
         }
       }
-
+      
       // setting position
       new_bubble.transform.position = pos;
       new_bubble.GetComponent<Bubbles_Script>().score = cyanSpawnRate * 5;
-
+      
       yield return new WaitForSeconds(cyanSpawnRate);
     }
   }
-
+  
   IEnumerator GreenSpawnLoop()
   {
     yield return new WaitForSeconds(greenSpawnRate);
-    while (true)
+    while (!TapConstants.gameover)
     {
       GameObject new_bubble = (GameObject)Instantiate(greenBubblePrefab);
       bubbles.Add(new_bubble);
-
+      
       //To spawn a bubble, get the current spawner position...
       Vector3 pos = transform.position;
       //Re-calculate position indicator
       bool overit = true;
-
+      
       while (overit)
       {
         //...set a random x, y position...
@@ -219,7 +219,7 @@ public class GenerateBubbles : MonoBehaviour
         {
           pos.y = pos.y - 2;
         }
-
+        
         //getting closest bubble distance
         float closest = 1000;
         for (int i = 0; i < bubbles.Count; i++)
@@ -238,28 +238,28 @@ public class GenerateBubbles : MonoBehaviour
           overit = false;
         }
       }
-
+      
       // setting position
       new_bubble.transform.position = pos;
       new_bubble.GetComponent<Bubbles_Script>().score = greenSpawnRate * 5;
-
+      
       yield return new WaitForSeconds(greenSpawnRate);
     }
   }
-
+  
   IEnumerator YellowSpawnLoop()
   {
     yield return new WaitForSeconds(yellowSpawnRate);
-    while (true)
+    while (!TapConstants.gameover)
     {
       GameObject new_bubble = (GameObject)Instantiate(yellowBubblePrefab);
       bubbles.Add(new_bubble);
-
+      
       //To spawn a bubble, get the current spawner position...
       Vector3 pos = transform.position;
       //Re-calculate position indicator
       bool overit = true;
-
+      
       while (overit)
       {
         //...set a random x, y position...
@@ -283,7 +283,7 @@ public class GenerateBubbles : MonoBehaviour
         {
           pos.y = pos.y - 2;
         }
-
+        
         //getting closest bubble distance
         float closest = 1000;
         for (int i = 0; i < bubbles.Count; i++)
@@ -302,28 +302,28 @@ public class GenerateBubbles : MonoBehaviour
           overit = false;
         }
       }
-
+      
       // setting position
       new_bubble.transform.position = pos;
       new_bubble.GetComponent<Bubbles_Script>().score = yellowSpawnRate * 5;
-
+      
       yield return new WaitForSeconds(yellowSpawnRate);
     }
   }
-
+  
   IEnumerator OrangeSpawnLoop()
   {
     yield return new WaitForSeconds(orangeSpawnRate);
-    while (true)
+    while (!TapConstants.gameover)
     {
       GameObject new_bubble = (GameObject)Instantiate(orangeBubblePrefab);
       bubbles.Add(new_bubble);
-
+      
       //To spawn a bubble, get the current spawner position...
       Vector3 pos = transform.position;
       //Re-calculate position indicator
       bool overit = true;
-
+      
       while (overit)
       {
         //...set a random x, y position...
@@ -347,7 +347,7 @@ public class GenerateBubbles : MonoBehaviour
         {
           pos.y = pos.y - 2;
         }
-
+        
         //getting closest bubble distance
         float closest = 1000;
         for (int i = 0; i < bubbles.Count; i++)
@@ -366,28 +366,28 @@ public class GenerateBubbles : MonoBehaviour
           overit = false;
         }
       }
-
+      
       // setting position
       new_bubble.transform.position = pos;
       new_bubble.GetComponent<Bubbles_Script>().score = orangeSpawnRate * 5;
-
+      
       yield return new WaitForSeconds(orangeSpawnRate);
     }
   }
-
+  
   IEnumerator PinkSpawnLoop()
   {
     yield return new WaitForSeconds(pinkSpawnRate);
-    while (true)
+    while (!TapConstants.gameover)
     {
       GameObject new_bubble = (GameObject)Instantiate(pinkBubblePrefab);
       bubbles.Add(new_bubble);
-
+      
       //To spawn a bubble, get the current spawner position...
       Vector3 pos = transform.position;
       //Re-calculate position indicator
       bool overit = true;
-
+      
       while (overit)
       {
         //...set a random x, y position...
@@ -411,7 +411,7 @@ public class GenerateBubbles : MonoBehaviour
         {
           pos.y = pos.y - 2;
         }
-
+        
         //getting closest bubble distance
         float closest = 1000;
         for (int i = 0; i < bubbles.Count; i++)
@@ -430,28 +430,28 @@ public class GenerateBubbles : MonoBehaviour
           overit = false;
         }
       }
-
+      
       // setting position
       new_bubble.transform.position = pos;
       new_bubble.GetComponent<Bubbles_Script>().score = pinkSpawnRate * 5;
-
+      
       yield return new WaitForSeconds(pinkSpawnRate);
     }
   }
-
+  
   IEnumerator PurpleSpawnLoop()
   {
     yield return new WaitForSeconds(purpleSpawnRate);
-    while (true)
+    while (!TapConstants.gameover)
     {
       GameObject new_bubble = (GameObject)Instantiate(purpleBubblePrefab);
       bubbles.Add(new_bubble);
-
+      
       //To spawn a bubble, get the current spawner position...
       Vector3 pos = transform.position;
       //Re-calculate position indicator
       bool overit = true;
-
+      
       while (overit)
       {
         //...set a random x, y position...
@@ -475,7 +475,7 @@ public class GenerateBubbles : MonoBehaviour
         {
           pos.y = pos.y - 2;
         }
-
+        
         //getting closest bubble distance
         float closest = 1000;
         for (int i = 0; i < bubbles.Count; i++)
@@ -494,11 +494,11 @@ public class GenerateBubbles : MonoBehaviour
           overit = false;
         }
       }
-
+      
       // setting position
       new_bubble.transform.position = pos;
       new_bubble.GetComponent<Bubbles_Script>().score = purpleSpawnRate * 5;
-
+      
       yield return new WaitForSeconds(purpleSpawnRate);
     }
   }
