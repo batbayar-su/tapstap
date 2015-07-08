@@ -22,6 +22,7 @@ public class GenerateBubbles : MonoBehaviour
   
   private System.Collections.Generic.List<GameObject> bubbles = new System.Collections.Generic.List<GameObject>();
   private float _too_close = 1.5f;
+  private float start_delay = TapConstants.start_delay;
   
   // Use this for initialization
   void Awake()
@@ -36,7 +37,7 @@ public class GenerateBubbles : MonoBehaviour
     StartCoroutine("PurpleSpawnLoop");
   }
   
-  void FixedUpdate()
+  void Update()
   {
     System.Collections.Generic.List<GameObject> must_destroy = new System.Collections.Generic.List<GameObject>();
     foreach (GameObject bubble in bubbles)
@@ -57,63 +58,16 @@ public class GenerateBubbles : MonoBehaviour
   
   IEnumerator BlueSpawnLoop()
   {
-    yield return new WaitForSeconds(blueSpawnRate);
+    yield return new WaitForSeconds(blueSpawnRate + start_delay);
     while (!TapConstants.gameover)
     {
+      //Creating object
       GameObject new_bubble = (GameObject)Instantiate(blueBubblePrefab);
       bubbles.Add(new_bubble);
-      
-      //To spawn a bubble, get the current spawner position...
-      Vector3 pos = transform.position;
-      //Re-calculate position indicator
-      bool overit = true;
-      
-      while (overit)
-      {
-        //...set a random x, y position...
-        float randomX = Random.Range(0, Screen.width);
-        float randomY = Random.Range(0, Screen.height);
-        if (randomY < Screen.height / 2)
-        {
-          randomY = randomY + 29;
-        }
-        if (randomX < Screen.width / 2)
-        {
-          randomX = randomX + 29;
-        }
-        else
-        {
-          randomX = randomX - 29;
-        }
-        Vector2 spawnPosition = new Vector2(randomX, randomY);
-        pos = Camera.main.ScreenToWorldPoint(new Vector3(spawnPosition.x, spawnPosition.y, 10));
-        if (pos.y > 3)
-        {
-          pos.y = pos.y - 2;
-        }
-        
-        //getting closest bubble distance
-        float closest = 1000;
-        for (int i = 0; i < bubbles.Count; i++)
-        {
-          if (new_bubble != bubbles[i])
-          {
-            float dist = Vector3.Distance(pos, bubbles[i].transform.position);
-            if (closest > dist)
-            {
-              closest = dist;
-            }
-          }
-        }
-        if (closest > _too_close)
-        {
-          overit = false;
-        }
-      }
-      
-      // setting position
-      new_bubble.transform.position = pos;
-      new_bubble.GetComponent<Bubbles_Script>().score = blueSpawnRate * 5;
+      //set new position
+      SetNewBubblePosition(new_bubble);
+      //set bubble point
+      new_bubble.GetComponent<Bubbles_Script>().SetScore(GetCalculatedScore(blueSpawnRate));
       
       yield return new WaitForSeconds(blueSpawnRate);
     }
@@ -121,63 +75,16 @@ public class GenerateBubbles : MonoBehaviour
   
   IEnumerator CyanSpawnLoop()
   {
-    yield return new WaitForSeconds(cyanSpawnRate);
+    yield return new WaitForSeconds(cyanSpawnRate + start_delay);
     while (!TapConstants.gameover)
     {
+      //Creating object
       GameObject new_bubble = (GameObject)Instantiate(cyanBubblePrefab);
       bubbles.Add(new_bubble);
-      
-      //To spawn a bubble, get the current spawner position...
-      Vector3 pos = transform.position;
-      //Re-calculate position indicator
-      bool overit = true;
-      
-      while (overit)
-      {
-        //...set a random x, y position...
-        float randomX = Random.Range(0, Screen.width);
-        float randomY = Random.Range(0, Screen.height);
-        if (randomY < Screen.height / 2)
-        {
-          randomY = randomY + 29;
-        }
-        if (randomX < Screen.width / 2)
-        {
-          randomX = randomX + 29;
-        }
-        else
-        {
-          randomX = randomX - 29;
-        }
-        Vector2 spawnPosition = new Vector2(randomX, randomY);
-        pos = Camera.main.ScreenToWorldPoint(new Vector3(spawnPosition.x, spawnPosition.y, 10));
-        if (pos.y > 3)
-        {
-          pos.y = pos.y - 2;
-        }
-        
-        //getting closest bubble distance
-        float closest = 1000;
-        for (int i = 0; i < bubbles.Count; i++)
-        {
-          if (new_bubble != bubbles[i])
-          {
-            float dist = Vector3.Distance(pos, bubbles[i].transform.position);
-            if (closest > dist)
-            {
-              closest = dist;
-            }
-          }
-        }
-        if (closest > _too_close)
-        {
-          overit = false;
-        }
-      }
-      
-      // setting position
-      new_bubble.transform.position = pos;
-      new_bubble.GetComponent<Bubbles_Script>().score = cyanSpawnRate * 5;
+      //set new position
+      SetNewBubblePosition(new_bubble);
+      //set bubble point
+      new_bubble.GetComponent<Bubbles_Script>().SetScore(GetCalculatedScore(cyanSpawnRate));
       
       yield return new WaitForSeconds(cyanSpawnRate);
     }
@@ -185,63 +92,16 @@ public class GenerateBubbles : MonoBehaviour
   
   IEnumerator GreenSpawnLoop()
   {
-    yield return new WaitForSeconds(greenSpawnRate);
+    yield return new WaitForSeconds(greenSpawnRate + start_delay);
     while (!TapConstants.gameover)
     {
+      //Creating object
       GameObject new_bubble = (GameObject)Instantiate(greenBubblePrefab);
       bubbles.Add(new_bubble);
-      
-      //To spawn a bubble, get the current spawner position...
-      Vector3 pos = transform.position;
-      //Re-calculate position indicator
-      bool overit = true;
-      
-      while (overit)
-      {
-        //...set a random x, y position...
-        float randomX = Random.Range(0, Screen.width);
-        float randomY = Random.Range(0, Screen.height);
-        if (randomY < Screen.height / 2)
-        {
-          randomY = randomY + 29;
-        }
-        if (randomX < Screen.width / 2)
-        {
-          randomX = randomX + 29;
-        }
-        else
-        {
-          randomX = randomX - 29;
-        }
-        Vector2 spawnPosition = new Vector2(randomX, randomY);
-        pos = Camera.main.ScreenToWorldPoint(new Vector3(spawnPosition.x, spawnPosition.y, 10));
-        if (pos.y > 3)
-        {
-          pos.y = pos.y - 2;
-        }
-        
-        //getting closest bubble distance
-        float closest = 1000;
-        for (int i = 0; i < bubbles.Count; i++)
-        {
-          if (new_bubble != bubbles[i])
-          {
-            float dist = Vector3.Distance(pos, bubbles[i].transform.position);
-            if (closest > dist)
-            {
-              closest = dist;
-            }
-          }
-        }
-        if (closest > _too_close)
-        {
-          overit = false;
-        }
-      }
-      
-      // setting position
-      new_bubble.transform.position = pos;
-      new_bubble.GetComponent<Bubbles_Script>().score = greenSpawnRate * 5;
+      //set new position
+      SetNewBubblePosition(new_bubble);
+      //set bubble point
+      new_bubble.GetComponent<Bubbles_Script>().SetScore(GetCalculatedScore(greenSpawnRate));
       
       yield return new WaitForSeconds(greenSpawnRate);
     }
@@ -249,63 +109,16 @@ public class GenerateBubbles : MonoBehaviour
   
   IEnumerator YellowSpawnLoop()
   {
-    yield return new WaitForSeconds(yellowSpawnRate);
+    yield return new WaitForSeconds(yellowSpawnRate + start_delay);
     while (!TapConstants.gameover)
     {
+      //Creating object
       GameObject new_bubble = (GameObject)Instantiate(yellowBubblePrefab);
       bubbles.Add(new_bubble);
-      
-      //To spawn a bubble, get the current spawner position...
-      Vector3 pos = transform.position;
-      //Re-calculate position indicator
-      bool overit = true;
-      
-      while (overit)
-      {
-        //...set a random x, y position...
-        float randomX = Random.Range(0, Screen.width);
-        float randomY = Random.Range(0, Screen.height);
-        if (randomY < Screen.height / 2)
-        {
-          randomY = randomY + 29;
-        }
-        if (randomX < Screen.width / 2)
-        {
-          randomX = randomX + 29;
-        }
-        else
-        {
-          randomX = randomX - 29;
-        }
-        Vector2 spawnPosition = new Vector2(randomX, randomY);
-        pos = Camera.main.ScreenToWorldPoint(new Vector3(spawnPosition.x, spawnPosition.y, 10));
-        if (pos.y > 3)
-        {
-          pos.y = pos.y - 2;
-        }
-        
-        //getting closest bubble distance
-        float closest = 1000;
-        for (int i = 0; i < bubbles.Count; i++)
-        {
-          if (new_bubble != bubbles[i])
-          {
-            float dist = Vector3.Distance(pos, bubbles[i].transform.position);
-            if (closest > dist)
-            {
-              closest = dist;
-            }
-          }
-        }
-        if (closest > _too_close)
-        {
-          overit = false;
-        }
-      }
-      
-      // setting position
-      new_bubble.transform.position = pos;
-      new_bubble.GetComponent<Bubbles_Script>().score = yellowSpawnRate * 5;
+      //set new position
+      SetNewBubblePosition(new_bubble);
+      //set bubble point
+      new_bubble.GetComponent<Bubbles_Script>().SetScore(GetCalculatedScore(yellowSpawnRate));
       
       yield return new WaitForSeconds(yellowSpawnRate);
     }
@@ -313,63 +126,16 @@ public class GenerateBubbles : MonoBehaviour
   
   IEnumerator OrangeSpawnLoop()
   {
-    yield return new WaitForSeconds(orangeSpawnRate);
+    yield return new WaitForSeconds(orangeSpawnRate + start_delay);
     while (!TapConstants.gameover)
     {
+      //Creating object
       GameObject new_bubble = (GameObject)Instantiate(orangeBubblePrefab);
       bubbles.Add(new_bubble);
-      
-      //To spawn a bubble, get the current spawner position...
-      Vector3 pos = transform.position;
-      //Re-calculate position indicator
-      bool overit = true;
-      
-      while (overit)
-      {
-        //...set a random x, y position...
-        float randomX = Random.Range(0, Screen.width);
-        float randomY = Random.Range(0, Screen.height);
-        if (randomY < Screen.height / 2)
-        {
-          randomY = randomY + 29;
-        }
-        if (randomX < Screen.width / 2)
-        {
-          randomX = randomX + 29;
-        }
-        else
-        {
-          randomX = randomX - 29;
-        }
-        Vector2 spawnPosition = new Vector2(randomX, randomY);
-        pos = Camera.main.ScreenToWorldPoint(new Vector3(spawnPosition.x, spawnPosition.y, 10));
-        if (pos.y > 3)
-        {
-          pos.y = pos.y - 2;
-        }
-        
-        //getting closest bubble distance
-        float closest = 1000;
-        for (int i = 0; i < bubbles.Count; i++)
-        {
-          if (new_bubble != bubbles[i])
-          {
-            float dist = Vector3.Distance(pos, bubbles[i].transform.position);
-            if (closest > dist)
-            {
-              closest = dist;
-            }
-          }
-        }
-        if (closest > _too_close)
-        {
-          overit = false;
-        }
-      }
-      
-      // setting position
-      new_bubble.transform.position = pos;
-      new_bubble.GetComponent<Bubbles_Script>().score = orangeSpawnRate * 5;
+      //set new position
+      SetNewBubblePosition(new_bubble);
+      //set bubble point
+      new_bubble.GetComponent<Bubbles_Script>().SetScore(GetCalculatedScore(orangeSpawnRate));
       
       yield return new WaitForSeconds(orangeSpawnRate);
     }
@@ -377,63 +143,16 @@ public class GenerateBubbles : MonoBehaviour
   
   IEnumerator PinkSpawnLoop()
   {
-    yield return new WaitForSeconds(pinkSpawnRate);
+    yield return new WaitForSeconds(pinkSpawnRate + start_delay);
     while (!TapConstants.gameover)
     {
+      //Creating object
       GameObject new_bubble = (GameObject)Instantiate(pinkBubblePrefab);
       bubbles.Add(new_bubble);
-      
-      //To spawn a bubble, get the current spawner position...
-      Vector3 pos = transform.position;
-      //Re-calculate position indicator
-      bool overit = true;
-      
-      while (overit)
-      {
-        //...set a random x, y position...
-        float randomX = Random.Range(0, Screen.width);
-        float randomY = Random.Range(0, Screen.height);
-        if (randomY < Screen.height / 2)
-        {
-          randomY = randomY + 29;
-        }
-        if (randomX < Screen.width / 2)
-        {
-          randomX = randomX + 29;
-        }
-        else
-        {
-          randomX = randomX - 29;
-        }
-        Vector2 spawnPosition = new Vector2(randomX, randomY);
-        pos = Camera.main.ScreenToWorldPoint(new Vector3(spawnPosition.x, spawnPosition.y, 10));
-        if (pos.y > 3)
-        {
-          pos.y = pos.y - 2;
-        }
-        
-        //getting closest bubble distance
-        float closest = 1000;
-        for (int i = 0; i < bubbles.Count; i++)
-        {
-          if (new_bubble != bubbles[i])
-          {
-            float dist = Vector3.Distance(pos, bubbles[i].transform.position);
-            if (closest > dist)
-            {
-              closest = dist;
-            }
-          }
-        }
-        if (closest > _too_close)
-        {
-          overit = false;
-        }
-      }
-      
-      // setting position
-      new_bubble.transform.position = pos;
-      new_bubble.GetComponent<Bubbles_Script>().score = pinkSpawnRate * 5;
+      //set new position
+      SetNewBubblePosition(new_bubble);
+      //set bubble point
+      new_bubble.GetComponent<Bubbles_Script>().SetScore(GetCalculatedScore(pinkSpawnRate));
       
       yield return new WaitForSeconds(pinkSpawnRate);
     }
@@ -441,65 +160,78 @@ public class GenerateBubbles : MonoBehaviour
   
   IEnumerator PurpleSpawnLoop()
   {
-    yield return new WaitForSeconds(purpleSpawnRate);
+    yield return new WaitForSeconds(purpleSpawnRate + start_delay);
     while (!TapConstants.gameover)
     {
+      //Creating object
       GameObject new_bubble = (GameObject)Instantiate(purpleBubblePrefab);
       bubbles.Add(new_bubble);
-      
-      //To spawn a bubble, get the current spawner position...
-      Vector3 pos = transform.position;
-      //Re-calculate position indicator
-      bool overit = true;
-      
-      while (overit)
-      {
-        //...set a random x, y position...
-        float randomX = Random.Range(0, Screen.width);
-        float randomY = Random.Range(0, Screen.height);
-        if (randomY < Screen.height / 2)
-        {
-          randomY = randomY + 29;
-        }
-        if (randomX < Screen.width / 2)
-        {
-          randomX = randomX + 29;
-        }
-        else
-        {
-          randomX = randomX - 29;
-        }
-        Vector2 spawnPosition = new Vector2(randomX, randomY);
-        pos = Camera.main.ScreenToWorldPoint(new Vector3(spawnPosition.x, spawnPosition.y, 10));
-        if (pos.y > 3)
-        {
-          pos.y = pos.y - 2;
-        }
-        
-        //getting closest bubble distance
-        float closest = 1000;
-        for (int i = 0; i < bubbles.Count; i++)
-        {
-          if (new_bubble != bubbles[i])
-          {
-            float dist = Vector3.Distance(pos, bubbles[i].transform.position);
-            if (closest > dist)
-            {
-              closest = dist;
-            }
-          }
-        }
-        if (closest > _too_close)
-        {
-          overit = false;
-        }
-      }
-      
-      // setting position
-      new_bubble.transform.position = pos;
-      new_bubble.GetComponent<Bubbles_Script>().score = purpleSpawnRate * 5;
+      //set new position
+      SetNewBubblePosition(new_bubble);
+      //set bubble point
+      new_bubble.GetComponent<Bubbles_Script>().SetScore(GetCalculatedScore(purpleSpawnRate));
       
       yield return new WaitForSeconds(purpleSpawnRate);
     }
+  }
+  
+  private void SetNewBubblePosition(GameObject new_bubble) {
+    //To spawn a bubble, get the current spawner position...
+    Vector3 pos = transform.position;
+    //Re-calculate position indicator
+    bool overit = true;
+    
+    while (overit)
+    {
+      //...set a random x, y position...
+      float randomX = Random.Range(0, Screen.width);
+      float randomY = Random.Range(0, Screen.height);
+      if (randomY < Screen.height / 2)
+      {
+        randomY = randomY + 29;
+      }
+      if (randomX < Screen.width / 2)
+      {
+        randomX = randomX + 29;
+      }
+      else
+      {
+        randomX = randomX - 29;
+      }
+      Vector2 spawnPosition = new Vector2(randomX, randomY);
+      pos = Camera.main.ScreenToWorldPoint(new Vector3(spawnPosition.x, spawnPosition.y, 10));
+      if (pos.y > 3)
+      {
+        pos.y = pos.y - 2;
+      }
+      
+      //getting closest bubble distance
+      float closest = 1000;
+      for (int i = 0; i < bubbles.Count; i++)
+      {
+        if (new_bubble != bubbles[i])
+        {
+          float dist = Vector3.Distance(pos, bubbles[i].transform.position);
+          if (closest > dist)
+          {
+            closest = dist;
+          }
+        }
+      }
+      if (closest > _too_close)
+      {
+        overit = false;
+      }
+    }
+    new_bubble.transform.position = pos;
+  }
+  
+  private float GetCalculatedScore(float spawn_rate) {
+    return Mathf.Round(spawn_rate * 4);
+  }
+
+  public void RestartGame () {
+    Debug.Log("Entered the restart button");
+    Application.LoadLevel("Practice");
   }
 }

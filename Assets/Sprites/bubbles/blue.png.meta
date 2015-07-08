@@ -15,6 +15,19 @@ TextureImporter:
     21300020: bubble1_10
     21300022: bubble1_11
     21300024: bubble1_12
+    21300026: blue_0
+    21300028: blue_1
+    21300030: blue_2
+    21300032: blue_3
+    21300034: blue_4
+    21300036: blue_5
+    21300038: blue_6
+    21300040: blue_7
+    21300042: blue_8
+    21300044: blue_9
+    21300046: blue_10
+    21300048: blue_11
+    21300050: blue_12
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -56,133 +69,133 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: bubble1_0
+    - name: blue_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 119
-        height: 120
+        width: 239
+        height: 240
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: bubble1_1
+    - name: blue_1
       rect:
         serializedVersion: 2
-        x: 119
+        x: 239
         y: 0
-        width: 119
-        height: 120
+        width: 239
+        height: 240
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: bubble1_2
+    - name: blue_2
       rect:
         serializedVersion: 2
-        x: 238
+        x: 478
         y: 0
-        width: 119
-        height: 120
+        width: 239
+        height: 240
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: bubble1_3
+    - name: blue_3
       rect:
         serializedVersion: 2
-        x: 357
+        x: 717
         y: 0
-        width: 119
-        height: 120
+        width: 239
+        height: 240
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: bubble1_4
+    - name: blue_4
       rect:
         serializedVersion: 2
-        x: 476
+        x: 956
         y: 0
-        width: 119
-        height: 120
+        width: 239
+        height: 240
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: bubble1_5
+    - name: blue_5
       rect:
         serializedVersion: 2
-        x: 595
+        x: 1195
         y: 0
-        width: 119
-        height: 120
+        width: 239
+        height: 240
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: bubble1_6
-      rect:
-        serializedVersion: 2
-        x: 714
-        y: 0
-        width: 119
-        height: 120
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: bubble1_7
-      rect:
-        serializedVersion: 2
-        x: 833
-        y: 0
-        width: 119
-        height: 120
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: bubble1_8
-      rect:
-        serializedVersion: 2
-        x: 952
-        y: 0
-        width: 119
-        height: 120
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: bubble1_9
-      rect:
-        serializedVersion: 2
-        x: 1071
-        y: 0
-        width: 119
-        height: 120
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: bubble1_10
-      rect:
-        serializedVersion: 2
-        x: 1190
-        y: 0
-        width: 119
-        height: 120
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: bubble1_11
-      rect:
-        serializedVersion: 2
-        x: 1309
-        y: 0
-        width: 119
-        height: 120
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: bubble1_12
+    - name: blue_6
       rect:
         serializedVersion: 2
         x: 1434
         y: 0
-        width: 120
-        height: 120
+        width: 239
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blue_7
+      rect:
+        serializedVersion: 2
+        x: 1673
+        y: 0
+        width: 239
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blue_8
+      rect:
+        serializedVersion: 2
+        x: 1912
+        y: 0
+        width: 239
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blue_9
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 0
+        width: 239
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blue_10
+      rect:
+        serializedVersion: 2
+        x: 2390
+        y: 0
+        width: 239
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blue_11
+      rect:
+        serializedVersion: 2
+        x: 2629
+        y: 0
+        width: 239
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: blue_12
+      rect:
+        serializedVersion: 2
+        x: 2868
+        y: 0
+        width: 239
+        height: 240
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
