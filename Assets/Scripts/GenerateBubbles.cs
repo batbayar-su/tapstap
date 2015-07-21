@@ -21,12 +21,15 @@ public class GenerateBubbles : MonoBehaviour
   public float purpleSpawnRate = 3.5f;
   
   private System.Collections.Generic.List<GameObject> bubbles = new System.Collections.Generic.List<GameObject>();
-  private float _too_close = 1.5f;
-  private float start_delay = TapConstants.start_delay;
+  private const float _too_close = 1.5f;
+  private readonly float start_delay = TapConstants.start_delay;
   
   // Use this for initialization
   void Awake()
   {
+    TapConstants.gameover = false;
+    TapConstants.user_score = 0;
+    Screen.orientation = ScreenOrientation.LandscapeLeft;
     //starts our function in charge of spawning the bubbles in the playable area
     StartCoroutine("BlueSpawnLoop");
     StartCoroutine("CyanSpawnLoop");

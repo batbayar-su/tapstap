@@ -10,8 +10,6 @@ public class Countdown : MonoBehaviour {
 	void Start () {
     second_text = GetComponent<UnityEngine.UI.Text> ();
     second_text.text = wait_seconds + "";
-//    iTween.MoveBy(gameObject, iTween.Hash("x", .5, "easeType", "easeInOutExpo", "loopType", "pingPong", "oncomplete", "ChangeCountdown", "delay", .5));
-//    iTween.MoveBy(gameObject, iTween.Hash("x", .5, "easeType", "easeInOutExpo", "loopType", "pingPong", "delay", .5));
     iTween.RotateBy(gameObject, iTween.Hash("x", .25, "easeType", "easeInOutExpo", "loopType", "loop", "oncomplete", "ChangeCountdown", "delay", .4));
 	}
 	

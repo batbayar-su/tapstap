@@ -15,20 +15,21 @@ public class Timer_Script : MonoBehaviour
     InvokeRepeating("decreaseTimeRemaining", TapConstants.start_delay, 1.0f);
 	}
 
-	void Update() {
-    if(!TapConstants.gameover) {
-  		if (left_seconds <= 0) {
-        time.text = "0";
-  			GameOver();
-  		} else {
-  			time.text = left_seconds + "";
-  		}
-    }
-	}	
-	
 	void decreaseTimeRemaining()
 	{
-		left_seconds--;
+    left_seconds--;
+    if (!TapConstants.gameover)
+    {
+      if (left_seconds == 0)
+      {
+        time.text = "0";
+        GameOver();
+      }
+      else if (left_seconds > 0)
+      {
+        time.text = left_seconds + "";
+      }
+    }
 	}
 
 	void GameOver ()
