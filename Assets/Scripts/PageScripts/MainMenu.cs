@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LoadOnClick : MonoBehaviour {
+public class MainMenu : MonoBehaviour {
 	
 	private bool _sceneStarting = true;
 	private GUITexture _fader;
 	private string level;
 	
 	void Awake() {
+    Screen.orientation = ScreenOrientation.Portrait;
 		_fader = GameObject.FindGameObjectWithTag("Fader").guiTexture;
 		_fader.pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
-		GUI.depth = 0;
 	}
 	
 	void OnMouseDown() {
@@ -43,6 +43,7 @@ public class LoadOnClick : MonoBehaviour {
 		_fader.enabled = true;
 		
 		// Start fading towards black.
+    _fader.pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
 		_fader.color = Color.Lerp(_fader.color, Color.black, TapConstants.fadeSpeed * Time.deltaTime);
 		
 		// If the screen is almost black...
@@ -56,5 +57,5 @@ public class LoadOnClick : MonoBehaviour {
 		if(!_sceneStarting) return;
 		_sceneStarting = false;
 		this.level = level;
-	}
+  }
 }

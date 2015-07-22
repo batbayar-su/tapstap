@@ -14,8 +14,8 @@ public class Finish : MonoBehaviour
   void Start () 
   {
     finishText = GetComponent<UnityEngine.UI.Text>();
-	fader = GameObject.FindGameObjectWithTag("Fader").guiTexture;
-	fader.color = Color.clear;
+	  fader = GameObject.FindGameObjectWithTag("Fader").guiTexture;
+	  fader.color = Color.clear;
     fader.pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
   }
 	
@@ -28,21 +28,26 @@ public class Finish : MonoBehaviour
       iTween.MoveFrom(gameObject, iTween.Hash("y", 6, "easeInSine", "easeInSine"));
       
       finishText.enabled = true;
-      Invoke("DelayInput", _endDelay);
-	}
-	if (TapConstants.gameover && finishText.enabled)
-	{
-	  if (Input.GetMouseButton(0) && ended)
-	  {
-	    TapConstants.gameover = false;
-		TapConstants.user_score = 0;
-		
 	  }
-	}
+	  if (TapConstants.gameover && finishText.enabled)
+	  {
+	    if (Input.GetMouseButton(0))
+	    {
+	      TapConstants.gameover = false;
+		    TapConstants.user_score = 0;
+	      ended = true;
+	    }
+	  }
+    if (ended)
+    {
+      fader.pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
+      fader.color = Color.Lerp(fader.color, Color.black, TapConstants.fadeSpeed * Time.deltaTime);
+
+      // If the screen is almost black...
+      if (fader.color.a >= 0.7f)
+        // ... reload the level.
+        Application.LoadLevel("MainMenu");
+    }
   }
 
-  void DelayInput()
-  {
-    ended = true;
-  }
 }

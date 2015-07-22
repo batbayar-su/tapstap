@@ -7,6 +7,7 @@ public class StartPage : MonoBehaviour {
 	private GUITexture _fader;
 	
 	void Awake() {
+    Screen.orientation = ScreenOrientation.Portrait;;
 		_fader = GameObject.FindGameObjectWithTag("Fader").guiTexture;
 		_fader.pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
 	}

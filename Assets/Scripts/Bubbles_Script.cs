@@ -33,47 +33,7 @@ public class Bubbles_Script : MonoBehaviour {
 		}
     if (Input.GetKeyDown(KeyCode.Escape)) 
       Application.Quit();
-	  if (Input.touches.Count() > 0)
-	  {
-	    var maxTouch = 2;
-	    if (Input.touches.Count() < 2) maxTouch = Input.touches.Count();
-	    for (int i = 0; i < maxTouch; i++)
-	    {
-        if (Input.GetTouch(i).phase == TouchPhase.Began)
-        {
-          checkTouch(Input.GetTouch(i).position);
-        }
-	    }
-	  }
 	}
-
-  private void checkTouch(Vector2 position)
-  {
-    var wp = Camera.main.ScreenToWorldPoint(position);
-    var touchPos = new Vector2(wp.x, wp.y);
-    var hit = Physics2D.OverlapPoint(touchPos);
-    if (hit.transform.gameObject.tag == "Bubble")
-    {
-
-      if (!TapConstants.gameover && (_animator.GetBool("ended")))
-      {
-        //Getting object position
-        _point = Camera.main.WorldToScreenPoint(transform.position);
-        _point.y = Screen.height - _point.y;
-        //set the hitten bubble position to out of screen.
-        _animator.SetBool("alive", false);
-        _animator.SetBool("ended", true);
-
-        TapConstants.user_score += _score;
-        iTween.ValueTo(_scoreNum.gameObject, iTween.Hash("from", Int32.Parse(_scoreNum.text), "to", TapConstants.user_score, "onUpdate", "AnimateGUITextPixelOffset", "easeType", iTween.EaseType.easeInOutBounce));
-
-        _audio.Play();
-        Handheld.Vibrate();
-      }
-      
-    }
-    
-  }
 
   void OnMouseDown () {
     if (!TapConstants.gameover && (!_animator.GetBool ("ended"))) {
@@ -85,12 +45,33 @@ public class Bubbles_Script : MonoBehaviour {
 			_animator.SetBool ("ended", true);
 
       TapConstants.user_score += _score;
-      iTween.ValueTo(_scoreNum.gameObject, iTween.Hash("from", Int32.Parse(_scoreNum.text), "to", TapConstants.user_score, "onUpdate", "AnimateGUITextPixelOffset", "easeType", iTween.EaseType.easeInOutBounce));
-      Debug.Log(TapConstants.user_score);
+      _scoreNum.text = TapConstants.user_score + "";
+//      iTween.ValueTo(_scoreNum.gameObject, iTween.Hash("from", Int32.Parse(_scoreNum.text), "to", TapConstants.user_score, "onUpdate", "AnimateGUITextPixelOffset", "easeType", iTween.EaseType.easeInOutBounce));
+//      Debug.Log(TapConstants.user_score);
 
       _audio.Play();
 		}
 	}
+
+  void OnTouchDOwn()
+  {
+    if (!TapConstants.gameover && (_animator.GetBool("ended")))
+    {
+      //Getting object position
+      _point = Camera.main.WorldToScreenPoint(transform.position);
+      _point.y = Screen.height - _point.y;
+      //set the hitten bubble position to out of screen.
+      _animator.SetBool("alive", false);
+      _animator.SetBool("ended", true);
+
+      TapConstants.user_score += _score;
+      _scoreNum.text = TapConstants.user_score + "";
+//      iTween.ValueTo(_scoreNum.gameObject, iTween.Hash("from", Int32.Parse(_scoreNum.text), "to", TapConstants.user_score, "onUpdate", "AnimateGUITextPixelOffset", "easeType", iTween.EaseType.easeInOutBounce));
+
+      _audio.Play();
+      Handheld.Vibrate();
+    }
+  }
 
   void OnGUI() {
     _guiStyle.fontSize = 40;
