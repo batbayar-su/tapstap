@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LoadOnClick : MonoBehaviour {
+public class StartPage : MonoBehaviour {
 	
 	private bool _sceneStarting = true;
 	private GUITexture _fader;
-	private string level;
 	
 	void Awake() {
 		_fader = GameObject.FindGameObjectWithTag("Fader").guiTexture;
 		_fader.pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
-		GUI.depth = 0;
 	}
 	
 	void OnMouseDown() {
+		if(_sceneStarting)
+			_sceneStarting = false;
 	}
 	
 	void Update()
@@ -48,13 +48,6 @@ public class LoadOnClick : MonoBehaviour {
 		// If the screen is almost black...
 		if(_fader.color.a >= 0.7f)
 			// ... reload the level.
-			Application.LoadLevel(level);
-	}   
-
-	public void LoadScene(string level)
-	{
-		if(!_sceneStarting) return;
-		_sceneStarting = false;
-		this.level = level;
+			Application.LoadLevel("MainMenu");
 	}
 }
