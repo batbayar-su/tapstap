@@ -10,10 +10,7 @@ public class MainMenu : MonoBehaviour {
 	void Awake() {
     Screen.orientation = ScreenOrientation.Portrait;
 		_fader = GameObject.FindGameObjectWithTag("Fader").guiTexture;
-		_fader.pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
-	}
-	
-	void OnMouseDown() {
+    _fader.transform.localScale = new Vector3(1f, 1f);
 	}
 	
 	void Update()
@@ -43,14 +40,13 @@ public class MainMenu : MonoBehaviour {
 		_fader.enabled = true;
 		
 		// Start fading towards black.
-    _fader.pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
 		_fader.color = Color.Lerp(_fader.color, Color.black, TapConstants.fadeSpeed * Time.deltaTime);
 		
 		// If the screen is almost black...
 		if(_fader.color.a >= 0.7f)
 			// ... reload the level.
 			Application.LoadLevel(level);
-	}   
+	}
 
 	public void LoadScene(string level)
 	{
