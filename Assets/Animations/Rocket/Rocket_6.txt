@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+<after_affect_animation_doc>
+<composition w="640" h="1136" id="1" >
+	<layer name="rocket_6.png" type="Footage" sourceType="FileSource" parent="none" index="1" source="rocket_6.png" w="222" h="534" inPoint="0" outPoint="3" blending="NORMAL" color="">
+	    <keyframe frame="0">
+		    <source name="Transform">
+			<property name="Position"  x="319.5"  y="567.5"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="1">
+		    <source name="Transform">
+			<property name="Position"  x="319.225768879412"  y="567.46952987549"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="2">
+		    <source name="Transform">
+			<property name="Position"  x="318.962425697264"  y="567.440269521918"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="3">
+		    <source name="Transform">
+			<property name="Position"  x="318.704301151073"  y="567.411589016786"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="4">
+		    <source name="Transform">
+			<property name="Position"  x="318.440798057571"  y="567.382310895286"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="5">
+		    <source name="Transform">
+			<property name="Position"  x="318.174663587317"  y="567.352740398591"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="6">
+		    <source name="Transform">
+			<property name="Position"  x="317.909407929248"  y="567.323267547694"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="7">
+		    <source name="Transform">
+			<property name="Position"  x="317.645681738488"  y="567.29396463761"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="8">
+		    <source name="Transform">
+			<property name="Position"  x="317.383139802496"  y="567.264793311388"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="9">
+		    <source name="Transform">
+			<property name="Position"  x="317.12093811552"  y="567.235659790613"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="10">
+		    <source name="Transform">
+			<property name="Position"  x="316.858081233394"  y="567.206453470377"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="11">
+		    <source name="Transform">
+			<property name="Position"  x="316.593726762847"  y="567.177080751427"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="12">
+		    <source name="Transform">
+			<property name="Position"  x="316.327536535084"  y="567.147504059454"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="13">
+		    <source name="Transform">
+			<property name="Position"  x="316.060183366321"  y="567.117798151814"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="14">
+		    <source name="Transform">
+			<property name="Position"  x="315.794304140136"  y="567.088256015571"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="15">
+		    <source name="Transform">
+			<property name="Position"  x="315.534694416691"  y="567.059410490744"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="16">
+		    <source name="Transform">
+			<property name="Position"  x="315.272145987675"  y="567.030238443075"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="17">
+		    <source name="Transform">
+			<property name="Position"  x="315"  y="567"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="18">
+		    <source name="Transform">
+			<property name="Position"  x="315.429539792493"  y="567.007774287391"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="19">
+		    <source name="Transform">
+			<property name="Position"  x="315.860117428522"  y="567.026165133956"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="20">
+		    <source name="Transform">
+			<property name="Position"  x="316.289554575743"  y="567.050156696624"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="21">
+		    <source name="Transform">
+			<property name="Position"  x="316.717865911222"  y="567.076605164875"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="22">
+		    <source name="Transform">
+			<property name="Position"  x="317.146241966503"  y="567.103313180346"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="23">
+		    <source name="Transform">
+			<property name="Position"  x="317.574867027692"  y="567.128422739266"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="24">
+		    <source name="Transform">
+			<property name="Position"  x="318.002994976674"  y="567.150170519301"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="25">
+		    <source name="Transform">
+			<property name="Position"  x="318.431188760068"  y="567.166840823603"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="26">
+		    <source name="Transform">
+			<property name="Position"  x="318.859989030369"  y="567.176496868445"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="27">
+		    <source name="Transform">
+			<property name="Position"  x="319.289727367283"  y="567.176760631983"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="28">
+		    <source name="Transform">
+			<property name="Position"  x="319.720290965625"  y="567.164525025176"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="29">
+		    <source name="Transform">
+			<property name="Position"  x="320.15077364521"  y="567.135532687957"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="30">
+		    <source name="Transform">
+			<property name="Position"  x="320.578900300789"  y="567.083705869791"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="31">
+		    <source name="Transform">
+			<property name="Position"  x="321"  y="567"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="32">
+		    <source name="Transform">
+			<property name="Position"  x="321.451437417925"  y="566.723818512956"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="33">
+		    <source name="Transform">
+			<property name="Position"  x="321.794275417338"  y="566.305987935806"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="34">
+		    <source name="Transform">
+			<property name="Position"  x="322.062997330911"  y="565.833870392166"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="35">
+		    <source name="Transform">
+			<property name="Position"  x="322.270592760498"  y="565.328081284041"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="36">
+		    <source name="Transform">
+			<property name="Position"  x="322.406515226167"  y="564.796821102125"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="37">
+		    <source name="Transform">
+			<property name="Position"  x="322.406223422552"  y="564.256928586523"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="38">
+		    <source name="Transform">
+			<property name="Position"  x="322"  y="564"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="39">
+		    <source name="Transform">
+			<property name="Position"  x="321.121018099768"  y="564.221615544311"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="40">
+		    <source name="Transform">
+			<property name="Position"  x="320.275391585766"  y="564.529747116596"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="41">
+		    <source name="Transform">
+			<property name="Position"  x="319.460889922684"  y="564.899238407993"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="42">
+		    <source name="Transform">
+			<property name="Position"  x="318.626683269025"  y="565.245049776311"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="43">
+		    <source name="Transform">
+			<property name="Position"  x="317.745395218135"  y="565.393641055347"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="44">
+		    <source name="Transform">
+			<property name="Position"  x="316.858077653201"  y="565.281897197925"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="45">
+		    <source name="Transform">
+			<property name="Position"  x="316"  y="565"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="46">
+		    <source name="Transform">
+			<property name="Position"  x="315.134457256562"  y="564.709792328925"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="47">
+		    <source name="Transform">
+			<property name="Position"  x="314.277907654538"  y="564.43263866931"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="48">
+		    <source name="Transform">
+			<property name="Position"  x="313.5"  y="564"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="49">
+		    <source name="Transform">
+			<property name="Position"  x="313.124321591751"  y="563.749547727834"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="50">
+		    <source name="Transform">
+			<property name="Position"  x="312.749313782112"  y="563.499542521408"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="51">
+		    <source name="Transform">
+			<property name="Position"  x="312.375241586242"  y="563.250161057495"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="52">
+		    <source name="Transform">
+			<property name="Position"  x="312"  y="563"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="53">
+		    <source name="Transform">
+			<property name="Position"  x="312.47091075692"  y="563.020891581579"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="54">
+		    <source name="Transform">
+			<property name="Position"  x="312.94042525041"  y="563.049943630737"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="55">
+		    <source name="Transform">
+			<property name="Position"  x="313.41167347458"  y="563.078767807424"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="56">
+		    <source name="Transform">
+			<property name="Position"  x="313.884708739794"  y="563.105485068806"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="57">
+		    <source name="Transform">
+			<property name="Position"  x="314.355176521394"  y="563.128897238028"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="58">
+		    <source name="Transform">
+			<property name="Position"  x="314.82323425762"  y="563.148347793263"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="59">
+		    <source name="Transform">
+			<property name="Position"  x="315.291425885728"  y="563.163295284634"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="60">
+		    <source name="Transform">
+			<property name="Position"  x="315.761904165987"  y="563.173034813202"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="61">
+		    <source name="Transform">
+			<property name="Position"  x="316.232386451734"  y="563.176608414169"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="62">
+		    <source name="Transform">
+			<property name="Position"  x="316.702886520455"  y="563.172931335825"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="63">
+		    <source name="Transform">
+			<property name="Position"  x="317.173565048091"  y="563.160589265945"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="64">
+		    <source name="Transform">
+			<property name="Position"  x="317.644185673946"  y="563.13767451855"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="65">
+		    <source name="Transform">
+			<property name="Position"  x="318.113558672762"  y="563.101577040792"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="66">
+		    <source name="Transform">
+			<property name="Position"  x="318.580069595796"  y="563.04852731699"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="67">
+		    <source name="Transform">
+			<property name="Position"  x="319.044310005806"  y="562.972089061376"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="68">
+		    <source name="Transform">
+			<property name="Position"  x="319.502970475185"  y="562.86113499825"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="69">
+		    <source name="Transform">
+			<property name="Position"  x="319.943544081212"  y="562.694536758212"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="70">
+		    <source name="Transform">
+			<property name="Position"  x="320.32621533974"  y="562.42528561497"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+	    <keyframe frame="71">
+		    <source name="Transform">
+			<property name="Position"  x="320.5"  y="562"  z="0"/>
+			<property name="Scale"  x="100"  y="100"  z="100"/>
+			<property name="Rotation" val="0"/>
+			<property name="Opacity" val="100"/>
+			<property name="Anchor Point"  x="111"  y="267"  z="0"/>
+		    </source>
+	    </keyframe>
+ 	</layer>
+   <meta duration="3.00" totalFrames="72"/>
+</composition>
+<sub_items>
+</sub_items>
+<meta frameDuration="0.04166666666667" totalFrames="72" duration="3.00"/>
+</after_affect_animation_doc>

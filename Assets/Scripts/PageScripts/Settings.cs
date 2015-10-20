@@ -8,20 +8,28 @@ public class Settings : MonoBehaviour {
   private GUITexture _fader;
   private InputField userField;
   private Slider volSlider;
+  private AudioSource backaudio;
 
   void Awake()
   {
-    Screen.orientation = ScreenOrientation.Portrait; ;
+    Screen.orientation = ScreenOrientation.Portrait;
     _fader = GameObject.FindGameObjectWithTag("Fader").guiTexture;
     _fader.pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
     userField = gameObject.GetComponentInChildren<InputField>();
     userField.text = TapConstants.player_name;
     volSlider = gameObject.GetComponentInChildren<Slider>();
     volSlider.value = TapConstants.sound_volume;
+    backaudio = GameObject.FindGameObjectWithTag("BackAudio").audio;
+  }
+
+  void Start()
+  {
+
   }
 
   void Update()
   {
+    backaudio.volume = volSlider.value;
     if (_sceneStarting)
       StartScene();
     else

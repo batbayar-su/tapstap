@@ -5,7 +5,8 @@ public class StartPage : MonoBehaviour
 {  
   private UnityEngine.UI.Text _taptoplay;
 	private bool _sceneStarting = true;
-	private GUITexture _fader;
+  private GUITexture _fader;
+  private AudioSource backaudio;
 	
 	void Awake() 
   {
@@ -13,6 +14,8 @@ public class StartPage : MonoBehaviour
     _fader = GameObject.FindGameObjectWithTag("Fader").guiTexture;
     _fader.transform.localScale = new Vector3(1f, 1f);
     _taptoplay = GameObject.FindGameObjectWithTag("UI").GetComponentsInChildren<UnityEngine.UI.Text>()[1];
+    backaudio = GameObject.FindGameObjectWithTag("BackAudio").audio;
+    backaudio.volume = TapConstants.sound_volume;
 	}
 	
 	void OnMouseDown() 
