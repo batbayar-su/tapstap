@@ -29,8 +29,6 @@ public class MainMenu : MonoBehaviour {
 			// ... set the colour to clear and disable the GUITexture.
 			_fader.color = Color.clear;
 			_fader.enabled = false;
-			
-			// The scene is no longer starting.
 		}
 	}
 	
