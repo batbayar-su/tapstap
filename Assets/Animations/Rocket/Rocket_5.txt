@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <after_affect_animation_doc>
 <composition w="640" h="1136" id="35" >
-	<layer name="Rocket.png" type="Footage" sourceType="FileSource" parent="none" index="1" source="Rocket.png" w="388" h="388" inPoint="0" outPoint="3" blending="NORMAL" color="">
+	<layer name="Rocket_5.png" type="Footage" sourceType="FileSource" parent="none" index="1" source="Rocket_5.png" w="388" h="388" inPoint="0" outPoint="3" blending="NORMAL" color="">
 	    <keyframe frame="0">
 		    <source name="Transform">
 			<property name="Position"  x="303"  y="590"  z="0"/>

@@ -22,11 +22,6 @@ public class Settings : MonoBehaviour {
     backaudio = GameObject.FindGameObjectWithTag("BackAudio").audio;
   }
 
-  void Start()
-  {
-
-  }
-
   void Update()
   {
     backaudio.volume = volSlider.value;
@@ -44,13 +39,14 @@ public class Settings : MonoBehaviour {
       // ... set the colour to clear and disable the GUITexture.
       _fader.color = Color.clear;
       _fader.enabled = false;
-
-      // The scene is no longer starting.
     }
   }
 
   public void EndScene()
   {
+    // Save changed values to file
+    TapConstants.Save();
+
     // Make sure the texture is enabled.
     _fader.enabled = true;
 

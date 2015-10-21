@@ -4,11 +4,10 @@ using System.Collections;
 public class Timer_Script : MonoBehaviour
 {
   public int left_seconds = 30;
-
-	private UnityEngine.UI.Text time;
+  private UnityEngine.UI.Text time;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		time = this.GetComponentInChildren<UnityEngine.UI.Text> ();
     //bubble_generator = GameObject.Find("background").GetComponent<GenerateBubbles>();
 		time.text = left_seconds + "";
