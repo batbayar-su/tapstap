@@ -17,10 +17,10 @@ public class Bubbles_Script : MonoBehaviour {
   private Vector3 _point;
   private readonly GUIStyle _guiStyle = new GUIStyle();
   private Rect _pointLabel;
-
 	void Start() {
 		_animator = gameObject.GetComponent<Animator> ();
-		_scoreNum = GameObject.Find("ScoreNum").GetComponent<Text>();
+    _scoreNum = GameObject.Find("ScoreNum").GetComponent<Text>();
+    GameObject.Find("Name").GetComponent<Text>().text = TapConstants.player_name;
     _audio = GetComponent<AudioSource>();
 	}
 	
